@@ -1,0 +1,8 @@
+server:
+    port: ${APP_PORT:8080}
+
+spring:
+    mvc:
+        view:
+            prefix: /jsp/
+            suffix: .jsp
