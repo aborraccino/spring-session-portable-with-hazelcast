@@ -11,7 +11,7 @@
 	<packaging>war</packaging>
 	<groupId>com.worldpay.spring.session.hazelcast</groupId>
 	<artifactId>demo-spring-session-with-hazelcast</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<name>demo-spring-session-with-hazelcast</name>
 	<description>Demo project for Spring Boot with hazelcast</description>
 	<properties>
