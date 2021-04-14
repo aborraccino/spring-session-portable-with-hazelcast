@@ -31,6 +31,7 @@ public class ContactController {
         this.contact.setCountry(contact.getCountry());
         this.contact.setName(contact.getName());
         this.contact.setSurname(contact.getSurname());
+        this.contact.setEmail(contact.getEmail());
         return showContact(model);
     }
 }

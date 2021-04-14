@@ -8,18 +8,20 @@
             contact = (Contact) session.getAttribute("scopedTarget.contact");
         }
     %>
-<h1>Read Contacts V1</h1>
+<h1>Read Contacts V2</h1>
 <p>You are currently logged in as <span id="un" style="font-weight: bold"><c:out value="${pageContext.request.remoteUser}"/></span>.</p>
 <table border="2" width="70%" cellpadding="2">
     <tr>
         <th>Name</th>
         <th>Surname</th>
         <th>Country</th>
+        <th>Email</th>
     </tr>
     <tr>
         <td> <% out.println(contact.getName()); %> </td>
         <td> <% out.println(contact.getSurname()); %> </td>
         <td> <% out.println(contact.getCountry()); %> </td>
+        <td> <% out.println(contact.getEmail()); %> </td>
     </tr>
 </table>
 
@@ -37,6 +39,10 @@
         <tr>
             <td>Country: </td>
             <td><form:input path="country"/></td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td><form:input path="email"/></td>
         </tr>
         <tr>
             <td></td>

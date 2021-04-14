@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
- * Contact V1 (CLASS_VERSION_ID=1): it has these field:
+ * Contact V2 (CLASS_VERSION_ID=2): it has "email" field in addition:
  *  username
  *  surname
  *  country
@@ -23,7 +23,7 @@ public class Contact implements VersionedPortable, Serializable {
 
     public static final int CLASS_ID = 1;
 
-    public static final int CLASS_VERSION_ID = 1;
+    public static final int CLASS_VERSION_ID = 2;
 
     private static final long serialVersionUID = 1234567L;
 
@@ -31,6 +31,7 @@ public class Contact implements VersionedPortable, Serializable {
     private String name;
     private String surname;
     private String country;
+    private String email;
 
     public String getUsername() {
         return username;
@@ -64,6 +65,14 @@ public class Contact implements VersionedPortable, Serializable {
         this.country = country;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public int getFactoryId() {
         return ContactPortableFactory.FACTORY_ID;
@@ -80,6 +89,7 @@ public class Contact implements VersionedPortable, Serializable {
         portableWriter.writeString("name", name);
         portableWriter.writeString("surname", surname);
         portableWriter.writeString("country", country);
+        portableWriter.writeString("email", email);
     }
 
     @Override
@@ -88,6 +98,7 @@ public class Contact implements VersionedPortable, Serializable {
         name = portableReader.readString("name");
         surname = portableReader.readString("surname");
         country = portableReader.readString("country");
+        email = portableReader.readString("email");
     }
 
     @Override
