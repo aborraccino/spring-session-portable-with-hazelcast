@@ -28,7 +28,6 @@ public class ContactController {
 
     @RequestMapping(value = "/update-contact", method = RequestMethod.POST)
     public String updateContact(Model model, @ModelAttribute("contact") Contact contact){
-        this.contact.setCountry(contact.getCountry());
         this.contact.setName(contact.getName());
         this.contact.setSurname(contact.getSurname());
         return showContact(model);

@@ -11,10 +11,9 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
- * Contact V1 (CLASS_VERSION_ID=1): it has these field:
+ * Contact V3 (CLASS_VERSION_ID=3): it has not "country" and "email" field anymore:
  *  username
  *  surname
- *  country
  */
 @SessionScope
 @Component("contact")
@@ -22,14 +21,13 @@ public class Contact implements VersionedPortable, Serializable {
 
     public static final int CLASS_ID = 1;
 
-    public static final int CLASS_VERSION_ID = 1;
+    public static final int CLASS_VERSION_ID = 3;
 
     private static final long serialVersionUID = 1234567L;
 
     private String username = "user";
     private String name;
     private String surname;
-    private String country;
 
     public String getUsername() {
         return username;
@@ -55,14 +53,6 @@ public class Contact implements VersionedPortable, Serializable {
         this.surname = surname;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     @Override
     public int getFactoryId() {
         return ContactPortableFactory.FACTORY_ID;
@@ -78,7 +68,6 @@ public class Contact implements VersionedPortable, Serializable {
         portableWriter.writeString("username", username);
         portableWriter.writeString("name", name);
         portableWriter.writeString("surname", surname);
-        portableWriter.writeString("country", country);
     }
 
     @Override
@@ -86,7 +75,6 @@ public class Contact implements VersionedPortable, Serializable {
         username = portableReader.readString("username");
         name = portableReader.readString("name");
         surname = portableReader.readString("surname");
-        country = portableReader.readString("country");
     }
 
     @Override
