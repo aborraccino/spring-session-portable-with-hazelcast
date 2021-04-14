@@ -15,7 +15,6 @@ import java.io.Serializable;
  *  username
  *  surname
  *  country
- *  email
  */
 @SessionScope
 @Component("contact")
